@@ -1,0 +1,260 @@
+/* Styles for card */
+.buttonContainer{
+  width: 144px;
+  height: 108px;
+  padding: 0px,24px,0,24px;
+  display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    min-width: 100%;
+    padding: 0px 1.5rem;
+
+
+}
+.add-question-btn{
+  position: fixed;
+  width: 100%;
+  margin: 0px;
+  border: 0px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: bottom;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px -4px inset;
+  background: rgb(19, 104, 206);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0px 16px 4px;
+  position: relative;
+  font-family: Montserrat, "Noto Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* Sticky button styles */
+
+
+
+/* Modal styles */
+.modal {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+/* Button styles */
+button {
+  margin-right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
+
+button.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Additional styles for card */
+
+
+.question-card-options {
+  margin-top: 5px;
+}
+
+/* Styles for the new element */
+.new-element {
+  margin-top: 5px;
+}
+
+.new-element .icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: purple;
+  color: white;
+  text-align: center;
+  line-height: 24px;
+}
+.addquestionbtn {
+  width: 112px;
+  height: 38px;
+  padding: 0, 16px, 2px, 16px;
+  margin-top: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  text-decoration: none;
+  font-family: Montserrat, "Noto Sans Arabic", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+
+  color: rgb(255, 255, 255);
+  background: rgb(19, 104, 206);
+}
+.addquestioncontainer {
+  width: 144px;
+  height: 108px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+
+.card {
+  width: 175.2px;
+  height: 116px;
+  height: 100%;
+  background-color: rgb(234, 244, 252);
+  user-select: none;
+  padding: 12px 16px 12px 0px;
+  display: block; /* Adjust as needed */
+  /* Other card styles */
+}
+
+/* Add additional styles as needed */
+.container {
+  display: flex;
+  height: 100vh; /* Adjust as needed */
+}
+
+.sidebar {
+
+  display: block;
+    position: relative;
+   
+    
+   width: 200px;
+    
+    margin: 3.5rem 0px 0px;
+  
+  
+
+   /* Sidebar background color */
+  /* Add additional styles as needed */
+}
+
+
+.card-no{
+  font-weight: 700;
+    line-height: 23px;
+    font-size: 0.75rem;
+    letter-spacing: 0.2px;
+    color: rgb(110, 110, 110);
+    width: 1.25rem;
+    text-align: right;
+    margin-left: 8px;
+}
+
+.card-title-container{
+  box-sizing: border-box;display: flex;
+  flex: 0 1 auto;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+ 
+
+}
+
+.card-title{
+  font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 23px;
+    color: rgb(110, 110, 110);
+    margin-left: 8px;
+
+}
+.cardsidebar{
+  
+    width: 24px;
+    height: 93px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  
+ 
+  
+   
+}
+
+.cardcontent{
+  display: flex;
+  flex-direction: row-reverse;
+  
+  justify-content: space-between;
+
+  
+  flex: 1 1 0%;
+ 
+  color: rgb(178, 178, 178);
+}
+.cardflex{
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  flex: 1 1 0%;
+  padding: 0.25rem 0.5rem;
+  color: rgb(178, 178, 178);
+}
+
+
+.cardcontent{
+  position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    flex: 1 1 0%;
+    width: 176px;
+    height: 93px;
+}
+.maincardcontent{
+  
+  outline: 0px;
+  box-shadow: rgb(19, 104, 206) 0px 0px 0px 3px;
+  border-radius: 0.25rem;
+  cursor: grab;
+  width: 150px;
+  height: 93px;
+  
+  
+  user-select: none;
+}
+
+.icons-side{
+  width: 24px;
+  height: 32px;
+  
+}
+
+/* Scroll on question container */
+.questionContainer {
+  min-height: 100px; /* Adjust the minimum height as needed */
+  max-height: 200px; /* Adjust the maximum height as needed */
+  overflow-y: auto;
+}

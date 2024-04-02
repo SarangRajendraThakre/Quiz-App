@@ -1,0 +1,20 @@
+
+*{
+  padding: 0;
+  margin: 0%;
+  box-sizing: border-box;
+}
+.head{
+  overflow-y: hidden;
+}
+
+.optionshape{
+  width: 40px;
+  height: 96px;
+  margin: 0px 4px 4px 4px;
+}
+
+.optionwritingarea{
+  width: 587.28px;
+  height: 112px;
+}

@@ -1,0 +1,201 @@
+.srt {
+  background-image: url("https://img.freepik.com/free-photo/3d-rendering-hexagonal-texture-background_23-2150796421.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1712016000&semt=ais");
+  background-size: cover;
+  margin-top: 50px;
+  width: 100vw;
+  height: 100vh;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  overflow-y: auto;
+}
+
+.questiontext {
+  display: flex;
+  align-items: center;
+
+  background-color: aliceblue;
+
+  position: relative;
+  margin-top: 60px;
+  margin-left: 30px;
+  border-radius: 10px;
+  width: 1214px;
+
+  padding: 8px 32px 8px 32px;
+}
+.questiontextinput {
+  width: 1214px;
+  text-align: center;
+  outline: none;
+  font-family: Montserrat, "Noto Sans Arabic", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-weight: 600;
+  font-size: larger;
+}
+.uploadfilebox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 0px 22px 0px;
+
+  width: 1263.2px;
+  height: 260px;
+}
+.uploadedimage {
+  background-color: #bbc9e9;
+  width: 358px;
+  height: 260px;
+  margin-top: 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  width: 186px;
+  height: 74px;
+}
+
+.iconandimgcontainer {
+  display: flex;
+
+  width: 186px;
+  height: 130px;
+}
+#faplusbtn {
+  width: 48px;
+  height: 48px;
+  background-color: azure;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgmedia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#faplusbtn:hover {
+  background-color: #f2f2f2;
+}
+
+.optionscontainermain {
+  width: 1295px;
+  height: 300px;
+  display: flex;
+
+  flex-wrap: wrap;
+
+  width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 32px 16px 48px 16px;
+}
+.option {
+  border-radius: 5px;
+  background-color: white;
+
+  width: 635.6px;
+  height: 112px;
+}
+#option1 {
+  margin-right: 8px;
+}
+#option3 {
+  margin-top: 8px;
+}
+#option4 {
+  margin-left: 8px;
+  margin-top: 8px;
+}
+.optiondiv {
+  width: 635.6px;
+  height: 112px;
+  padding-left: 4px;
+  padding-right: 4px;
+
+  -webkit-box-align: center;
+  align-items: center;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 0px -0.25rem 0px 0px inset;
+  box-sizing: border-box;
+
+  overflow: visible;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  display: flex;
+  flex: 1 0 auto;
+  transition: box-shadow 0.2s ease 0s, background 0.2s ease 0s,
+    opacity 0.2s ease 0s;
+  border-radius: 4px;
+  min-height: 2.25rem;
+
+  background-color: rgb(255, 255, 255);
+  color: rgb(204, 204, 204);
+  fill: rgb(255, 255, 255);
+}
+
+.optionwritingarea {
+  width: 587.6px;
+  height: 112px;
+}
+
+
+.optionshape {
+  flex: 0 0 auto;
+  border-radius: 4px;
+  height: calc(100% - 1rem);
+  margin: 0px 0.25rem 0.25rem;
+  padding: 0px;
+  justify-content: center;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  transition: box-shadow 0.2s ease 0s, background 0.2s ease 0s,
+    opacity 0.2s ease 0s;
+}
+
+#optionshape1 {
+  background-color: #e21b3c;
+}
+
+#optionshape2 {
+  background-color: #1368ce;
+}
+#optionshape3 {
+  background-color: #d89e00;
+}
+#optionshape4 {
+  background-color: #26890c;
+}
+
+.writearea {
+  outline: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: clamp(8px, 1.2vmin, 16px);
+  justify-content: flex-start;
+  font-family: Montserrat, "Noto Sans Arabic", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: clamp(1rem, 1.8vmin, 1.375rem);
+  color: rgb(255, 255, 255);
+  caret-color: rgb(0, 0, 0);
+  line-height: 1.25;
+  text-align: left;
+}
+.place {
+  width: 539.6px;
+  height: 100%;
+  font-size: larger;
+  font-weight: 600;
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  justify-content: flex-start; /* Align content to the start */
+  color: rgb(110, 110, 110);
+  content: attr(data-placeholder);
+  text-shadow: none;
+}

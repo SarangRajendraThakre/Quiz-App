@@ -12,6 +12,68 @@ const Questionf = () => {
   const [option3Text, setOption3Text] = useState("");
   const [option4Text, setOption4Text] = useState("");
 
+  const [quizTitle, setQuizTitle] = useState("");
+  const [questions, setQuestions] = useState([]);
+  const [questionText, setQuestionText] = useState("");
+  const [options, setOptions] = useState(["", "", "", ""]);
+  const [correctAnswers, setCorrectAnswers] = useState([]);
+  const [questionType, setQuestionType] = useState("");
+  const [image, setImage] = useState(null);
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
+  const handleImageChange = (e) => {
+    setImage(e.target.files[0]);
+  };
+
+  const addQuestion = () => {
+    const newQuestion = {
+      questionText,
+      options,
+      correctAnswers,
+      questionType,
+    };
+    setQuestions([...questions, newQuestion]);
+    // Clear input fields after adding question
+    setQuestionText("");
+    setOptions(["", "", "", ""]);
+    setCorrectAnswers([]);
+  };
+
+  const handleSubmit = async () => {
+    try {
+      // Upload image
+      const formData = new FormData();
+      formData.append("image", image);
+      const response = await axios.post(
+        "http://localhost:3001/api/upload",
+        formData
+      );
+      const imagePath = response.data.imagePath;
+
+      // Send quiz data to backend API including quizTitle and imagePath
+      await axios.post("http://localhost:3001/api/quizzes", {
+        title: quizTitle,
+        visibility: "public",
+        imagePath,
+        questions,
+      });
+      alert("Quiz submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting quiz:", error);
+      alert("Failed to submit quiz. Please try again.");
+    }
+  };
+
+
   const handleOption1Change = (e) => {
     setOption1Text(e.target.textContent);
   };
@@ -29,86 +91,94 @@ const Questionf = () => {
   };
 
   return (
-    <div className="srt">
+    <div className="srt">   
+     
       <div className="questiontext">
-        <input
-          className="questiontextinput"
-          type="text"
-          placeholder="start typing here"
-          name=""
-          id=""
-        />
-      </div>
+        <div className="advertise">
+          <div className="advertiseinner"></div>
+        </div>
+        
+        <div
+          className="questiontextinput">
+<div className="innerquestiontextinput">
 
-      <div className="uploadfilebox">
-        <div className="uploadedimage">
-          <div className="iconandimgcontainer">
-            <div className="imgmedia">
-              <img src={jpgImage} alt="Uploaded Image" />
-              <button id="faplusbtn">
-                <span>
-                  <GoPlus fontSize="32px" />
+
+
+  <div className="innerquestiontextinputinner">
+
+<div className="innerquestiontextinputinnerinner" >
+  <div className="innerquestiontextinputinnerinnerinner" contentEditable="true"><p placeholder="start typing your question"></p></div>
+
+  
+</div>
+
+
+
+  </div>
+</div>
+
+
+
+          </div>
+         
+        <div className="mainmiddlearea">
+          <div className="mainmiddleareainner">
+          <div className="mainmiddleareainnerinner">
+          <div className="mainmiddleareainnerinnerinner">
+            <div className="mainmiddleareainnerinnerinnerinner"></div>
+      
+          </div>
+          </div>
+          </div>
+        </div>
+
+        <div className="optionmainarea">
+          <div className="optionmainareainner">  <div className="optionmainareainnerinner">
+            <div className="optionmainareainnerinnerinner">
+              <div className="optioncard"><div className="optioncardinner">
+                <span className="optioncardinnerspan">
+                  
                 </span>
-              </button>
-            </div>
-          </div>
+                <div className="optioncardinnermain">
+                  <div className="optioncardinnermaintext"></div>
+                </div>
+                </div></div>
+                <div className="optioncard"><div className="optioncardinner">
+                <span className="optioncardinnerspan">
+                  
+                </span>
+                <div className="optioncardinnermain">
+                  <div className="optioncardinnermaintext"></div>
+                </div>
+                </div></div>
+                <div className="optioncard"><div className="optioncardinner">
+                <span className="optioncardinnerspan">
+                  
+                </span>
+                <div className="optioncardinnermain">
+                  <div className="optioncardinnermaintext"></div>
+                </div>
+                </div></div>
+                <div className="optioncard"><div className="optioncardinner">
+                <span className="optioncardinnerspan">
+                  
+                </span>
+                <div className="optioncardinnermain">
+                  <div className="optioncardinnermaintext"></div>
+                </div>
+                </div></div>
+               
+            </div> <button className="addmore">Add more options</button>
+          </div></div>
         </div>
+
       </div>
 
-      <div className="optionscontainermain">
-        <div className="option" id="option1">
-          <div className="optiondiv" style={{ backgroundColor: option1Text ? "#e21b3c" : "white" }}>
-            <div className="optionshape" id="optionshape1">
-              <span style={{ color: "white" }}>
-                <IoTriangleSharp fontSize="30px" />
-              </span>
-            </div>
-
-            <div className="optionwritingarea">
-              <div className="writearea" contentEditable="true" onInput={handleOption1Change}>
-                <p className="place" placeholder="Add answer 1" style={{ color: option1Text ? "white" : "black" }}></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="option" id="option2">
-          <div className="optiondiv" style={{ backgroundColor: option2Text ? "#1368ce" : "white" }}>
-            <div className="optionshape" id="optionshape2">
-              <span style={{ color: "white" }}>
-                <BsDiamondFill fontSize="30px" />
-              </span>
-            </div>
-            <div className="optionwritingarea">
-              <div className="writearea" contentEditable="true" onInput={handleOption2Change}>
-                <p className="place" placeholder="Add answer 2" style={{ color: option2Text ? "white" : "black" }}></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="option" id="option3">
-          <div className="optiondiv" style={{ backgroundColor: option3Text ? "#d89e00" : "white" }}>
-            <div className="optionshape" id="optionshape3">
-              <FaCircle color="white" fontSize="30px" />
-            </div>
-            <div className="optionwritingarea">
-              <div className="writearea" contentEditable="true" onInput={handleOption3Change}>
-                <p className="place" placeholder="Add answer 3" style={{ color: option3Text ? "white" : "black" }}></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="option" id="option4">
-          <div className="optiondiv" style={{ backgroundColor: option4Text ? "#26890c" : "white" }}>
-            <div className="optionshape" id="optionshape4">
-              <FaSquareFull color="white" fontSize="20px" />
-            </div>
-            <div className="optionwritingarea">
-              <div className="writearea" contentEditable="true" onInput={handleOption4Change}>
-                <p className="place" placeholder="Add answer 4" style={{ color: option4Text ? "white" : "black" }}></p>
-              </div>
-            </div>
-          </div>
+      <div className={`rightsiderbar ${isSidebarOpen ? '' : 'close'}`}>
+        <button className="btnright" onClick={toggleSidebar}></button>
+        <div className="rightsidebarmain">
+          {/* Content inside the sidebar */}
+          <button onClick={closeSidebar}>Close Sidebar</button>
         </div>
       </div>
     </div>

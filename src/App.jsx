@@ -14,11 +14,30 @@ import Questionf from './components/Questionf';
 const App = () => {
   return (<>
 
-<Header className="head"/>
+  <div className='main'>
+    <div className="wrapper">
+  
+  <div className='spacer'>    <Header className="head"/></div>
 
-<div className='flex flex-row ' ><Sidebar/>
+  
 
-<Questionf/></div>
+<div className='overflowsidebar' ><Sidebar/>
+
+
+
+</div>
+
+  
+
+  <div className='maincountainer'>  <Questionf/></div>
+  
+
+</div>
+
+      
+    </div>
+    
+  
 
 
 

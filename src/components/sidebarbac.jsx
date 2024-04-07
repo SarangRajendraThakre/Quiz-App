@@ -6,12 +6,13 @@ function QuestionCard({ questionType, index }) {
     <div className="card">
       <div className="question-card">
         <div className="card-title-container">
-          <div className="card-no noofquestion ">{index + 1}</div>
-          <div className="card-title">{questionType}</div>
+          <div className="card-no">{index + 1}</div>
+          <div className="card-title">Quiz</div>
         </div>
         <div className="cardcontent">
           <div className="maincardcontent"></div>
-          <div className="cardsidebar"> <span className="icons-side">
+          <div className="cardsidebar">
+            <span className="icons-side">
               <svg
                 width="20px"
                 height="20px"
@@ -52,7 +53,8 @@ function QuestionCard({ questionType, index }) {
                   style={{ fill: "rgb(110, 110, 110)" }}
                 ></path>
               </svg>
-            </span></div>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -60,7 +62,8 @@ function QuestionCard({ questionType, index }) {
 }
 
 function Sidebar() {
-  const [cards, setCards] = useState([]); // Initialize with an empty array
+  const [questionType, setQuestionType] = useState("");
+  const [cards, setCards] = useState(["TrueFalse"]); // Initialize with one default card
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleToggleModal = () => {
@@ -68,82 +71,54 @@ function Sidebar() {
   };
 
   const handleAddQuestion = (type) => {
-    // Add the selected question type to the sidebar
+    setQuestionType(type);
     setCards([...cards, type]);
     setIsModalOpen(false);
   };
 
   return (
-    <>
-      <div className="sidebar">
-      
-          {/* Render question cards here */}
-          {cards.map((type, index) => (
-            <QuestionCard key={index} questionType={type} index={index} />
-          ))}
-        </div>
-      
+    <div className="sidebar">
+      <div className="question-container" id="questionContainer">
+        {/* Render question cards here */}
+        {cards.map((type, index) => (
+          <QuestionCard key={index} questionType={type} index={index} />
+        ))}
+      </div>
       <div id="buttonContainer">
-        <div className="outerbutton">
-          <span>
-            <button onClick={handleToggleModal} className="add-question-btn">
-              <span>Add Question </span>
-            </button>
-          </span>
-
-          <div className="slide">
-            <button>
-              <span>slide</span>
-            </button>
-          </div>
-        </div>
-
         {/* Modal */}
         {isModalOpen && (
           <div className="modal">
-            <div className="modalinside">
-              <div className="modalagaininside">
-                {/* Modal header */}
-                <div className="modalmainheader ">
-                  <div className="modalheader">
-                    <div className="modalheadertext">Select Question Type</div>
-                  </div>
-                </div>
-                {/* Modal body */}
-                <div className="mma">
-                  <div className="modalmainarea">
-                    <div className="modalmainareainside">
-                      {/* List of available question types */}
-                      <div className="modalmainareainsideinsdie">
-                        <div className="modallsidequestionlist">
-                          {/* Button to add True/False question */}
-                          <div className="modalquestiontyep">
-                            <div className="testknowtitle">True/False</div>
-                            <div className="questionlist">
-                              <button
-                                className="modalbuttons"
-                                onClick={() => handleAddQuestion("True/False")}
-                              >
-                                Add
-                              </button>
-                            </div>
-                          </div>
-                          {/* Add more question types as needed */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="modalinside"> 
+            
+            <div className="modalheader">
+              
             </div>
-          </div>
+            
+            
+             <h2>Add Question</h2>
+            <button onClick={handleToggleModal}>Close</button>
+            {/* Buttons for adding different types of questions */}
+            <button onClick={() => handleAddQuestion("TrueFalse")}>
+              True/False
+            </button>
+            <button onClick={() => handleAddQuestion("MultipleChoice")}>
+              Multiple Choice
+            </button>
+            <button onClick={() => handleAddQuestion("MultipleSelect")}>
+              Multiple Select
+            </button>
+          </div>  </div>
+           
         )}
-      </div>{" "}
-      {/* Button to toggle the modal */}
-
-      
-    </>
+      </div>
+      <div className="add-question-container">
+        <button onClick={handleToggleModal} className="add-question-btn">
+          Add Question
+        </button>
+      </div>
+    </div>
   );
 }
+
 
 export default Sidebar;

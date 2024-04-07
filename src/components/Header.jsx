@@ -22,7 +22,7 @@ const Header = () => {
   
   
   <div className='flex h-[42px] justify-between  bg-white rounded-md border-[0.5px] border-[#484848]  justify-center items-center w-[320.4px] h-[42.4px]  text-[#6E6E6E]  font-extrabold'>
-    <span>  <input type="text" placeholder='Enter kahoot title...' className='outline-none bg-white  w-[164px] ml-[16px] font-black   text-black  '  />
+    <span>  <input type="text" placeholder='Enter kahoot title...' className=' quiztitle outline-none bg-white  w-[164px] ml-[16px] font-black   text-black  '  />
   </span>
    <span> <div className='bg-[#F2F2F2]    px-[13px] py-[7px] ml-[12px]  text-sm/[16px]    mr-[4px] '>Setting</div>
    </span>

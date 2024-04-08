@@ -5,6 +5,8 @@ import { GoPlus } from "react-icons/go";
 import { IoTriangleSharp } from "react-icons/io5";
 import { FaCircle, FaSquareFull } from "react-icons/fa";
 import { BsDiamondFill } from "react-icons/bs";
+import { FaArrowLeft } from "react-icons/fa";
+
 
 const Questionf = () => {
   const [option1Text, setOption1Text] = useState("");
@@ -174,11 +176,11 @@ const Questionf = () => {
 
       </div>
 
+
       <div className={`rightsiderbar ${isSidebarOpen ? '' : 'close'}`}>
-        <button className="btnright" onClick={toggleSidebar}></button>
+        <button className="btnright" onClick={toggleSidebar}><span className="faarrow">,<FaArrowLeft/></span></button>
         <div className="rightsidebarmain">
-          {/* Content inside the sidebar */}
-          <button onClick={closeSidebar}>Close Sidebar</button>
+        
         </div>
       </div>
     </div>

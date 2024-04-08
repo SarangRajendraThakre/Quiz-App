@@ -1,5 +1,6 @@
 /* Styles for card */
 .buttonContainer {
+ 
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
@@ -8,7 +9,8 @@
   -webkit-box-pack: start;
   justify-content: flex-start;
   min-width: 100%;
-  padding: 0px 1.5rem;
+ 
+  box-sizing: border-box;
 }
 .add-question-btn {
   position: fixed;
@@ -36,29 +38,7 @@
 /* Sticky button styles */
 
 /* Modal styles */
-.modal {
-  display: block;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: brown;
 
-  border-radius: 5px;
-
-  z-index: 1000;
-  width: 676px;
-  height: 639.2px;
-
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  transform: translate3d(211px, 56px, 0px);
-  min-width: max-content;
-  z-index: 10000;
-  --radix-popper-transform-origin: -8px 316.79998779296875px;
-}
 
 .modalinside {
   width: 660px;
@@ -491,9 +471,50 @@ button.close {
 }
 
 .slide {
-  min-height: 40px;
-  margin-top: 2px;
-  padding-bottom: 2px;
-  background-color: rgb(223, 223, 223);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px -2px inset;
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 255, 255);
+  transition: all 0.2s ease 0s;
+  width: 100%;
+}
+.slideinside{
+  
+  width: 100%;
+  margin: 0px;
+  border: 0px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: bottom;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px -4px inset;
+  background: rgb(242, 242, 242);
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 0px 16px 4px;
+  position: relative;
+  font-family: Montserrat, "Noto Sans Arabic", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+.modal {
+
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  transform: translate3d(211px, 56px, 0px);
+  min-width: max-content;
+  z-index: 10000;
+  --radix-popper-transform-origin: -8px 350px;/* Ensure the modal appears above other elements */
+}
+
+.modalinside {
+ /* Adjust width as needed */
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: unset;
+    width: 660px;
 }

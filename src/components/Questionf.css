@@ -7,7 +7,6 @@
 .rightsiderbar.close{
  
  
-    transform: rotateY(0deg);
     display: flex;
     flex-direction: column;
     flex: 0 0 18rem;
@@ -16,11 +15,14 @@
     box-shadow: rgba(0, 0, 0, 0.15) -2px 0px 4px 0px;
     background-color: rgb(255, 255, 255);
     margin-right: -18rem;
+  
+
 }
 
 
 .rightsiderbar{
-   
+    transform: translateX(0);
+  
   display: flex;
   flex-direction: column;
   flex: 0 0 18rem;
@@ -30,7 +32,7 @@
   background-color: rgb(255, 255, 255);
   margin-right: 0rem;
   transition: transform 0.3s ease-in-out;
-  transform: translateX(100%);
+ 
 
 }
 
@@ -52,13 +54,11 @@
   
   margin-bottom: 16px;
 }
-.btnright{
-  
-  transition: all 0.6s ease-in-out 0s;
+.btnright {
   position: absolute;
   top: 50%;
-  transform: translate(-100%, -50%);
-  left: 24px;
+  transform: translateY(-70%);
+left: 80px;
   min-width: 2.5rem;
   height: 2.5rem;
   padding: 4px;
@@ -66,13 +66,11 @@
   box-shadow: rgba(0, 0, 0, 0.15) -2px 0px 4px 0px;
   border-radius: 4px 0px 0px 4px;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: center;
   justify-content: center;
-  clip-path: inset(-10px 24px -10px -10px);
-    
+  z-index: 1; /* Ensure the button is above the sidebar */
 }
+
 .questiontext {
     position: relative;
     display: flex;
@@ -82,8 +80,10 @@
     background: url(//assets-cdn.kahoot.it/builder/v2/assets/business_default-da04c7ff.jpg) center center / cover no-repeat rgb(242, 242, 242);
     flex: 1 1 calc(100% - 2* clamp(16px, 2vmin, 48px));
     padding: 32px clamp(16px, 2vmin, 48px) 48px;
-    max-height: calc(100% - 2* clamp(16px, 2vmin, 48px));
+   
     margin-left: 12rem;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 686px;
   }
   
  
@@ -105,6 +105,11 @@
   border-radius: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.15) 0px -4px 0px 0px inset;
   z-index: 1;
+}
+.faarrow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .innerquestiontextinputinnerinnerinner{
   height: 100%;
@@ -657,3 +662,4 @@ p {
   content: attr(data-placeholder);
   text-shadow: none;
 }
+

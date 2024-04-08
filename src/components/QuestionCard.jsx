@@ -1,5 +1,5 @@
-import React from "react";
-import "./Sidebar.css";
+import React from 'react'
+
 
 function QuestionCard({ questionType, index }) {
   return (
@@ -61,38 +61,4 @@ function QuestionCard({ questionType, index }) {
   );
 }
 
-function Sidebar({ isModalOpen, handleToggleModal, addQuestion, questionCards }) {
-  return (
-    <>
-      <div className="sidebar">
-        {/* Always render one default card */}
-        <QuestionCard key={0} questionType="Default Question" index={0} />
-        
-        {/* Render additional question cards */}
-        {questionCards.map((questionType, index) => (
-          <QuestionCard key={index + 1} questionType={questionType} index={index + 1} />
-        ))}
-      </div>
-      <div id="buttonContainer">
-        <div className="outerbutton">
-          <span>
-            <button onClick={handleToggleModal} className="add-question-btn">
-              <span>Add question </span>
-            </button>
-          </span>
-
-
-          <div className="slide">
-                     <span>
-            <button onClick={handleToggleModal} className="slideinside">
-              <span>Add slide </span>
-            </button>
-          </span>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-
-export default Sidebar;
+export default QuestionCard

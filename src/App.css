@@ -55,6 +55,8 @@ div{
 
 .overflowsidebar {
   position: fixed;
+  
+  box-sizing: border-box;
   left: 0px;
 
   overflow: hidden;

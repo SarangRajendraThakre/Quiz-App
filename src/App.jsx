@@ -1,78 +1,83 @@
-import React from 'react'
-import { MdStars } from "react-icons/md";
-import { TiTick } from "react-icons/ti";
-import { IoIosColorPalette } from "react-icons/io";
-import './App.css'
-import { AiOutlineEye } from "react-icons/ai";
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Questionf from './components/Questionf';
-
-
-
+import './App.css';
 
 const App = () => {
-  return (<>
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [questionCards, setQuestionCards] = useState([]); // State to hold question cards
 
-  <div className='main'>
-    <div className="wrapper">
-  
-  <div className='spacer'>    <Header className="head"/></div>
+  const handleToggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
-  
+  const handleAddQuestion = (type) => {
+    // Add the new question card to the state
+    setQuestionCards([...questionCards, type]);
+    setIsModalOpen(false); // Close the modal after adding the question
+  };
 
-<div className='overflowsidebar' ><Sidebar/>
+  return (
+    <div className='main'>
+      <div className="wrapper">
+        <div className='spacer'>
+          <Header className="head"/>
+        </div>
+        <div className='overflowsidebar'>
+          <Sidebar 
+            isModalOpen={isModalOpen} 
+            handleToggleModal={handleToggleModal} 
+            addQuestion={handleAddQuestion} // Pass the handleAddQuestion function
+            questionCards={questionCards} // Pass the questionCards state
+          />
+        </div>
+        <div className='maincountainer'>
+          <Questionf/>
+        </div>
+      </div>
 
-
-
-</div>
-
-  
-
-  <div className='maincountainer'>  <Questionf/></div>
-  
-
-</div>
-
-      
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modalinside">
+            <div className="modalagaininside">
+              {/* Modal header */}
+              <div className="modalmainheader ">
+                <div className="modalheader">
+                  <div className="modalheadertext">Select Question Type</div>
+                </div>
+              </div>
+              {/* Modal body */}
+              <div className="mma">
+                <div className="modalmainarea">
+                  <div className="modalmainareainside">
+                    {/* List of available question types */}
+                    <div className="modalmainareainsideinsdie">
+                      <div className="modallsidequestionlist">
+                        {/* Button to add True/False question */}
+                        <div className="modalquestiontyep">
+                          <div className="testknowtitle">True/False</div>
+                          <div className="questionlist">
+                            <button
+                              className="modalbuttons"
+                              onClick={() => handleAddQuestion("True/False")}
+                            >
+                              Add
+                            </button>
+                          </div>
+                        </div>
+                        {/* Add more question types as needed */}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </>
-  )
+  );
 }
 
-export default App
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default App;
